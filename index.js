@@ -1,23 +1,48 @@
 const inquirer = require("inquirer");
-let titlename="mini project 28"
+let titlename="readme-generator"
 const fs = require('fs')
 console.log("hiiii")
 inquirer
   .prompt([
     {
       type: 'input',
-      message: 'What is your user name?',
-      name: 'username',
+      message: 'What is your project title?',
+      name: 'project title',
     },
     {
       type: 'input',
-      message: 'What is your LinkedIn account',
-      name: 'LinkendIn',
+      message: 'What is your Description?',
+      name: 'Desription',
     },
     {
       type: 'input',
-      message: 'What is your Github account',
+      message: 'What is your Installation?',
+      name: 'Installation',
+    },
+    {
+      type: 'input',
+      message: 'What is your Usage?',
+      name: 'Usage',
+    },
+    {
+      type: 'input',
+      message: 'What is your Contributing?',
+      name: 'Contributing',
+    },
+    {
+      type: 'input',
+      message: 'What are your Tests?',
+      name: 'Tests',
+    },
+    {
+      type: 'input',
+      message: 'What is your Github account?',
       name: 'Github',
+    },
+    {
+      type: 'input',
+      message: 'What is your email address?',
+      name: 'Email',
     },
   ])
   .then((answers) => {
@@ -53,11 +78,17 @@ inquirer
     }
   });
 
+function writeFile(html){
+    fs.writeFileSync("./dist/README.md" , html)
+}
 
+async function init(){
+    let answers = await prompt();
+    let genHTML = generateHTML(answers);
+    writeHTMLFile(genHTML);
+}
 
-
-
-
+init();
 
 
 
