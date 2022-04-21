@@ -7,7 +7,7 @@ inquirer
     {
       type: 'input',
       message: 'What is your project title?',
-      name: 'project title',
+      name: 'Project',
     },
     {
       type: 'input',
@@ -55,6 +55,40 @@ inquirer
           <title>Document</title>
       </head>
       <body>
+      <h1>User Info</h1>
+      <section>
+          <div>
+              <p>
+                  what is your project title? ${answers.Project}
+              </p>
+              <p>
+                  what is your description? ${answers.Description}
+              </p>
+              <p>
+                  What is your installation? ${answers.Installation} 
+              </p>
+              <p>
+                  What is your usage? ${answers.Usage}
+              </p>
+              <p>
+                  What is your contributing? ${answers.Contributing}
+              </p>
+              <p>
+                  What is your tests? ${answers.Tests}
+              </p>
+              <p>
+                  License?
+              </p>
+              <p>
+                  What is your GitHub? <a href="${answers.GitHub}">${answers.Github}</a>
+              </p>
+              <p>
+                  What is your Email? <a href="${answers.LinkendIn}">${answers.LinkendIn}</a>
+              </p>
+  
+          </div>
+      </section>
+          
           <H1>${titlename}</H1>
           <ul>
               <li>${answers.username}</li>
@@ -64,7 +98,7 @@ inquirer
       </body>
       </html>`;
       console.log(answers)
-      fs.writeFile(`./web.html`, htmlPage, (err) =>
+      fs.writeFile("./dist/README.md", htmlPage, (err) =>
   // TODO: Describe how this ternary operator works
   err ? console.error(err) : console.log('Commit logged!')
 );
@@ -73,8 +107,10 @@ inquirer
   .catch((error) => {
     if (error.isTtyError) {
       // Prompt couldn't be rendered in the current environment
+      console.log(error);
     } else {
       // Something else went wrong
+      console.log(error);
     }
   });
 
@@ -82,13 +118,13 @@ function writeFile(html){
     fs.writeFileSync("./dist/README.md" , html)
 }
 
-async function init(){
-    let answers = await prompt();
-    let genHTML = generateHTML(answers);
-    writeHTMLFile(genHTML);
-}
+// async function init(){
+//     let answers = await prompt();
+//     let genHTML = generateHTML(answers);
+//     writeHTMLFile(genHTML);
+// }
 
-init();
+// init();
 
 
 
