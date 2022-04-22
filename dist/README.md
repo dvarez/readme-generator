@@ -3,22 +3,22 @@
 <img src="https://img.shields.io/badge/license-Apache-green"> 
 
 
-# Title: Readme generator
+# Title: readme generator
               
             
-## Description: App to fill out information for user.
+## Description: an app to register user input
             
               
-## Installation: Our installation is index.js 
+## Installation: good stuff 
               
               
 ## usage: lots of usage
              
               
-## contributing: Myself, and none other.
+## contributing: one person team
               
             
-## tests: tests are cool
+## tests: test are testing
               
               
 ## License: 
@@ -27,7 +27,7 @@ Apache
               
 ## questions: 
 
- GitHub: [gitHub is cool also!](https://github.com/gitHub is cool also!)         
+ GitHub: [github](https://github.com/github)         
               
  Email: email@google.com
               
